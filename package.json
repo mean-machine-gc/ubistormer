@@ -1,0 +1,72 @@
+{
+  "name": "ubistorming",
+  "version": "1.0.0",
+  "description": "Interactive EventStorming graph visualization and modeling tool",
+  "main": "dist/index.js",
+  "bin": {
+    "ubistorming": "dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc src/index.ts --outDir dist --module ESNext --target ES2022 --moduleResolution node",
+    "build:cli": "tsc src/index.ts --outDir dist --module ESNext --target ES2022 --moduleResolution node",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build",
+    "test-api": "node --loader ts-node/esm src/test-api.ts"
+  },
+  "dependencies": {
+    "@joint/core": "^4.1.3",
+    "@sveltejs/vite-plugin-svelte": "^4.0.4",
+    "graphology": "^0.26.0",
+    "graphology-operators": "^1.6.1",
+    "graphology-shortest-path": "^2.1.0",
+    "graphology-traversal": "^0.3.1",
+    "graphology-types": "^0.24.8",
+    "graphology-utils": "^2.5.2",
+    "marked": "^16.1.1",
+    "monaco-editor": "^0.52.2",
+    "svelte": "^5.37.2",
+    "svelvet": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/marked": "^5.0.2",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "ws": "^8.16.0"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "keywords": [
+    "eventstorming",
+    "domain-driven-design",
+    "ddd",
+    "visualization",
+    "graph",
+    "modeling",
+    "event-sourcing",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ubistorming.git"
+  },
+  "homepage": "https://github.com/yourusername/ubistorming#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/ubistorming/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "index.html",
+    "vite.config.mjs",
+    "svelte.config.js",
+    "tsconfig.json",
+    "README.md"
+  ]
+}

@@ -1,0 +1,26 @@
+# Development files
+node_modules/
+.git/
+.gitignore
+
+# Build artifacts we don't need in published package
+src/**/*.js.map
+dist/**/*.map
+
+# Development and testing
+.vite/
+.env*
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.tgz

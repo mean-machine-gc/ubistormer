@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubistormer v0.0.1 - Webhook System v1.0.0 EventStorming</title>
+  
+  <!-- Monaco Editor CDN - Load globally to bypass Vite -->
+  <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+  <script>
+    require.config({ 
+      paths: { vs: 'https://unpkg.com/monaco-editor@latest/min/vs' } 
+    });
+    require(['vs/editor/editor.main'], function () {
+      console.log('✅ Monaco CDN loaded globally in ubistorming.html');
+      window.MonacoReady = true;
+      window.monaco = monaco; // Make sure monaco is globally available
+      window.dispatchEvent(new CustomEvent('monaco-ready'));
+    });
+  </script>
+</head>
+<body>
+  <!-- Svelte app will mount here -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

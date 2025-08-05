@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubistormer v0.0.1 - Webhook System v1.0.0</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    
+    .nav-container {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0 0 20px 0;
+      color: #333;
+      font-size: 24px;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 30px;
+      background: white;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s;
+      min-width: 200px;
+    }
+    
+    .nav-btn:hover {
+      background: #007bff;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .nav-btn-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .nav-btn-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .nav-btn-desc {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .info {
+      margin-top: 40px;
+      padding: 20px;
+      background: #e8f4f8;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  
+  <!-- Monaco Editor CDN - Load globally to bypass Vite -->
+  <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+  <script>
+    // Configure Monaco CDN globally
+    require.config({ 
+      paths: { vs: 'https://unpkg.com/monaco-editor@latest/min/vs' } 
+    });
+    
+    // Load Monaco and make it available globally
+    require(['vs/editor/editor.main'], function () {
+      console.log('✅ Monaco CDN loaded globally');
+      window.MonacoReady = true;
+      
+      // Dispatch event so other scripts know Monaco is ready
+      window.dispatchEvent(new CustomEvent('monaco-ready'));
+    });
+  </script>
+</head>
+<body>
+  <div class="nav-container">
+    <h1>Ubistormer v0.0.1</h1>
+    <p style="margin: 0 0 5px 0; color: #666; font-style: italic;">EventStorming for Ubi framework</p>
+    <p style="margin: 0 0 20px 0; color: #333; font-weight: bold;">Project: Webhook System v1.0.0</p>
+    
+    <div class="nav-buttons">
+      <a href="ubistorming.html" class="nav-btn">
+        <div class="nav-btn-icon">🕸️</div>
+        <div class="nav-btn-title">EventStorming Graph</div>
+        <div class="nav-btn-desc">Interactive Cytoscape.js visualization</div>
+      </a>
+      
+      <a href="bpmn.html" class="nav-btn">
+        <div class="nav-btn-icon">📋</div>
+        <div class="nav-btn-title">Process Flow</div>
+        <div class="nav-btn-desc">Mermaid flowchart from timeline layout</div>
+      </a>
+    </div>
+    
+    <div class="info">
+      <h3>About Ubistormer</h3>
+      <p>EventStorming visualization tool for the Ubi framework. This project shows the webhook system architecture using EventStorming methodology.</p>
+      <ul>
+        <li><strong>EventStorming Graph</strong>: Interactive force-directed graph with filtering and custom layouts</li>
+        <li><strong>Process Flow</strong>: Clean Mermaid flowchart generated from the timeline layout</li>
+      </ul>
+      <p><em>Tip: Arrange nodes in the EventStorming timeline layout, then generate process flow!</em></p>
+    </div>
+  </div>
+</body>
+</html>

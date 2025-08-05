@@ -1,6 +1,6 @@
 {
   "name": "ubistorming",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Interactive EventStorming graph visualization and modeling tool",
   "main": "dist/index.js",
   "bin": {
@@ -9,10 +9,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc src/index.ts --outDir dist --module ESNext --target ES2022 --moduleResolution node",
-    "build:cli": "tsc src/index.ts --outDir dist --module ESNext --target ES2022 --moduleResolution node",
+    "build": "npm run build:app && npm run build:cli",
+    "build:app": "vite build",
+    "build:cli": "tsc src/index.ts --outDir dist --module ESNext --target ES2022 --moduleResolution node --esModuleInterop true --allowSyntheticDefaultImports true",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build:cli",
     "test-api": "node --loader ts-node/esm src/test-api.ts"
   },
   "dependencies": {
@@ -27,17 +28,17 @@
     "marked": "^16.1.1",
     "monaco-editor": "^0.52.2",
     "svelte": "^5.37.2",
-    "svelvet": "^11.0.5"
+    "svelvet": "^11.0.5",
+    "vite": "^5.0.0"
   },
   "devDependencies": {
     "@types/marked": "^5.0.2",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0",
-    "vite": "^5.0.0",
     "ws": "^8.16.0"
   },
-  "author": "Your Name",
+  "author": "Giovanni Bartolomeo",
   "license": "MIT",
   "keywords": [
     "eventstorming",
@@ -51,11 +52,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ubistorming.git"
+    "url": "https://github.com/mean-machine-gc/ubistormer.git"
   },
-  "homepage": "https://github.com/yourusername/ubistorming#readme",
+  "homepage": "https://github.com/mean-machine-gc/ubistormer#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/ubistorming/issues"
+    "url": "https://github.com/mean-machine-gc/ubistormer/issues"
   },
   "engines": {
     "node": ">=18.0.0"

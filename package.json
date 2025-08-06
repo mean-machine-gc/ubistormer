@@ -1,6 +1,6 @@
 {
   "name": "ubistorming",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Interactive EventStorming graph visualization and modeling tool",
   "main": "dist/index.js",
   "bin": {
@@ -29,14 +29,14 @@
     "monaco-editor": "^0.52.2",
     "svelte": "^5.37.2",
     "svelvet": "^11.0.5",
-    "vite": "^5.0.0"
+    "vite": "^5.0.0",
+    "ws": "^8.16.0"
   },
   "devDependencies": {
     "@types/marked": "^5.0.2",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.0",
-    "typescript": "^5.0.0",
-    "ws": "^8.16.0"
+    "typescript": "^5.0.0"
   },
   "author": "Giovanni Bartolomeo",
   "license": "MIT",
